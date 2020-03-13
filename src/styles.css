@@ -1,0 +1,26 @@
+.h-15px {
+    height: 15px;
+    flex-basis: 100%;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+    margin: 15px 0;
+    border: .5px solid #e2e2e2;
+}
+
+label {
+    font-weight: bold;
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+    border-color: rgb(255, 0, 21);
+    box-shadow: 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 0, 21, .4);
+    /* box-shadow: 0 0 0 0.2rem rgb(255, 0, 21, .25); */
+}
+ 
+.help-block {
+    color: rgb(255, 0, 21);
+}

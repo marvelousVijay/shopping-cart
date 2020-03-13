@@ -1,0 +1,12 @@
+li.nav-item {
+    cursor: pointer;
+}
+
+a.nav-link.active {
+    font-weight: bold;
+}
+
+.app-manage-dropdown .dropdown-toggle,
+.app-manage-dropdown .dropdown-menu .dropdown-item {
+    cursor: pointer;
+}

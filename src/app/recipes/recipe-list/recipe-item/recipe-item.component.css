@@ -1,0 +1,23 @@
+@media (min-width: 1200px) {
+    .mh-150px {
+        max-height: 150px;
+    }
+
+    .mw-200px {
+        max-width: 200px;
+    }
+}
+
+a.recipe-item {
+    cursor: pointer;
+    color: #333;
+    text-decoration: unset;
+}
+
+a.recipe-item.active {
+    color: #fefefe !important;
+}
+
+.recipe-content {
+    padding: 10px 0 10px 15px;
+}

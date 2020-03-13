@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand navbar-light bg-light">
+    <a href="#" class="navbar-brand">Recipe Book</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav w-100">
+            <li class="nav-item" *ngIf="isAuthenticated">
+                <a class="nav-link" routerLinkActive="active" routerLink="/recipes">Recipes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" [routerLink]="['/shopping-list']">Shopping list</a>
+            </li>
+            <li class="nav-item" *ngIf="!isAuthenticated">
+                <a class="nav-link" routerLinkActive="active" [routerLink]="['/auth']">Authentication</a>
+            </li>
+            <li class="nav-item ml-auto">
+                <a class="nav-link" *ngIf="isAuthenticated" (click)="onLogout()">Logout</a>
+            </li>
+            <li class="app-manage-dropdown nav-item dropdown" appDropdown>
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown">Manage</a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" (click)="onFetchRecipe()">Fetch Recipes</a>
+                    <a class="dropdown-item" (click)="onSaveRecipe()">Save Recipes</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>

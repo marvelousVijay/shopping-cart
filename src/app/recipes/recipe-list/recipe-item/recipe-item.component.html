@@ -1,0 +1,16 @@
+<a
+    [routerLink]="[recipeIndex]"
+    routerLinkActive="active"
+    class="recipe-item d-flex list-group-item clearfix text-secondary mb-3 p-0"
+>
+    <div class="recipe-content col-7 pr-sm-2 pr-2">
+        <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
+        <p class="list-group-item-text">{{ recipe.description }}</p>
+    </div>
+    <picture class="recipe-image col-5 p-0">
+        <img 
+            [src]="recipe.imagePath"
+            alt="{{ recipe.name }}"
+            class="img-fluid rounded" />
+    </picture>
+</a>

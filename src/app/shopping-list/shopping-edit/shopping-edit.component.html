@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col">
+        <form [formGroup]="ingredientsForm" (ngSubmit)="onIngredientsFormSubmit()">
+            <div 
+                class="row"
+                formGroupName="ingredientsData">
+                <div class="col-sm-5 form-group">
+                    <label for="name">Name</label>
+                    <input 
+                        type="text"
+                        id="name"
+                        class="form-control"
+                        formControlName="name">
+                        <span
+                            class="help-block"
+                            *ngIf="ingredientsForm.get('ingredientsData.name').invalid &&
+                                    ingredientsForm.get('ingredientsData.name').touched">
+                            Please enter a ingredient name
+                        </span>
+                </div>
+                <div class="col-sm-2 form-group">
+                    <label for="quantity">Quantity</label>
+                    <input 
+                        type="number"
+                        id="quantity"
+                        class="form-control"
+                        [pattern]="'^[1-9]+[0-9]*$'"
+                        formControlName="quantity">
+                        <span
+                            class="help-block"
+                            *ngIf="ingredientsForm.get('ingredientsData.quantity').invalid &&
+                                    ingredientsForm.get('ingredientsData.quantity').touched">
+                            Please enter a valid quantity
+                        </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="Submit" class="btn btn-success mr-2" [disabled]="ingredientsForm.invalid">{{ editMode === true ? 'Update' : 'Add' }}</button>
+                    <button type="button" class="btn btn-danger mr-2" 
+                    *ngIf="editMode === true"
+                    (click)="onIngredientsFormDelete()">Delete</button>
+                    <button type="button" class="btn btn-primary" (click)="onIngredientsFormClear()">Clear</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
